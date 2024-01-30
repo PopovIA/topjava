@@ -37,7 +37,6 @@ public class UserMealsUtil {
     }
 
     public static List<UserMealWithExcess> filteredByStreams(List<UserMeal> meals, LocalTime startTime, LocalTime endTime, int caloriesPerDay) {
-        // TODO Implement by streams
         Map<LocalDate, Integer> caloriesSumByDate = meals.stream()
                 .collect(Collectors.groupingBy(meal -> meal.getDateTime().toLocalDate(),
                                 Collectors.summingInt(UserMeal::getCalories)));
